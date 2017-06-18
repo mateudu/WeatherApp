@@ -20,20 +20,7 @@ namespace WeatherApp.Web.App_Start
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<WeatherForecastContext>()
-                .As<WeatherForecastContext>()
-                .InstancePerDependency();
-
-            builder.RegisterType<WeatherForecastRepository>()
-                .As<IWeatherForecastRepository>()
-                .InstancePerRequest();
-
-            builder.Register(
-                    x =>
-                        new AccuweatherWeatherSerivce(
-                            ConfigurationManager.AppSettings["AccuweatherWeatherService:ApiKey"]))
-                .As<IWeatherService>()
-                .InstancePerLifetimeScope();
+            builder.RegisterModule(new ApplicationModule());
 
             builder.RegisterControllers(typeof(MvcApplication).Assembly)
                    .InstancePerRequest();
