@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Aplikacja do pogody - Mateusz Dudek</h1>
+    <p class="lead">Administrator- Email: <b>admin@example.com</b>, Hasło: <b>Warszawa2017!</b> (z wykrzyknikiem na końcu)<br/>
+        Możliwość dodania nowego miasta (jako administrator), a po dodaniu możliwość zaktualizowania temperatury z wykorzystaniem serwisu zewnętrznego.
+    </p>
+    <p>@Html.ActionLink("Dane pogodowe", "Index", "WeatherForecasts")</p>
+</div>
