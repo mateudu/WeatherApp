@@ -79,7 +79,7 @@ namespace WeatherApp.Web.Controllers
             }
             catch (WeatherServiceException exc)
             {
-                return HttpNotFound(exc.Message);
+                return new HttpNotFoundResult(exc.Message);
             }
         }
 
